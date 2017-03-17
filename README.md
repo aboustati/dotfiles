@@ -5,3 +5,5 @@ anything you want; however, at your own risk.
 
 I use Ubunutu-based Linux distributions. Hence, I have only tested my
 configuration on those.
+
+This is currently work in progress, so lots of things may be broken!
