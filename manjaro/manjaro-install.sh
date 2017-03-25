@@ -15,9 +15,6 @@ sudo pacman -S $OFFICIAL_PACKAGES
 AUR_PACKAGES=$(cat aur.list | xargs)
 yaourt -S $AUR_PACKAGES
 
-# Install Oh My Zsh
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-
 # Change shell to Zsh
 chsh -s $(which zsh)
 
