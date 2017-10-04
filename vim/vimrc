@@ -12,24 +12,61 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Folding for Python
 Plugin 'tmhedberg/SimpylFold'
+
+" For indenting Python code
 Plugin 'vim-scripts/indentpython.vim'
+
+" Autocompletion
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
+
+" Syntax highlighting
+"Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
+
+" Autoformat Code
+Plugin 'Chiel92/vim-autoformat'
+
+" Syntax Checking
 Plugin 'nvie/vim-flake8'
+
+" Colour Schemes
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'zeis/vim-kolor'
+Plugin 'chriskempson/base16-vim'
+
+" Nerdtree filesystem
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" Ctrl-P fuzzy search
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" Autocommenting
+Plugin 'scrooloose/nerdcommenter'
+
+" Git wrapper for vim (unused for now)
+"Plugin 'tpope/vim-fugitive'
+
+" Vim airline status bar
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" Tools for integration with tmux
 Plugin 'epeli/slimux'
 Plugin 'christoomey/vim-tmux-navigator'
+
+" Tool to switch between abolute and relative line numbering
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'chriskempson/base16-vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -105,16 +142,17 @@ if has('gui_running')
   set background=dark
   colorscheme solarized
 else
-  let g:kolor_italic=1                    " Enable italic. Default: 1
-  let g:kolor_bold=1                      " Enable bold. Default: 1
-  let g:kolor_underlined=1                " Enable underline. Default: 0
-  let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
-  set background=dark
-  colorscheme kolor
+  "let g:kolor_italic=1                    " Enable italic. Default: 1
+  "let g:kolor_bold=1                      " Enable bold. Default: 1
+  "let g:kolor_underlined=1                " Enable underline. Default: 0
+  "let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
+  "set background=dark
+  "colorscheme kolor
+  colorscheme molokai
 endif
 
 "Switch between light and dark themes F5
-call togglebg#map("<F5>")
+" call togglebg#map("<F5>")
 
 "Hide .pyc files in nerdtree & ctrl+p
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
