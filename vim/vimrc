@@ -34,6 +34,9 @@ Plugin 'Chiel92/vim-autoformat'
 " Syntax Checking
 Plugin 'nvie/vim-flake8'
 
+" Vim Surround
+Plugin 'tpope/vim-surround'
+
 " Colour Schemes
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
