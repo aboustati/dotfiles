@@ -84,5 +84,5 @@ export LANG=en_GB.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Anaconda3
-export PATH="/home/ayman/anaconda3/bin:$PATH"
+export PATH="/home/aboustati/anaconda3/bin:$PATH"
 

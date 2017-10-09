@@ -22,9 +22,13 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 
 " Autocompletion
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'davidhalter/jedi-vim'
 
 " Syntax highlighting
+Plugin 'hdima/python-syntax'
+
+" Syntax checking
 "Plugin 'scrooloose/syntastic'
 Plugin 'w0rp/ale'
 
@@ -123,18 +127,8 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.cpp,*.cu match BadWhitespace /\s\+$/
 set encoding=utf-8
 
 "Customise YCM
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-"python with virtualenv support
-py3 << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-	project_base_dir = os.environ['VIRTUAL_ENV']
-	activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-	execfile(activate_this, dict(__file__=activate_this))
-EOF
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "Python syntax highlighting
 let python_highlight_all=1
@@ -153,6 +147,8 @@ else
   "colorscheme kolor
   colorscheme molokai
 endif
+
+let g:airline_theme='simple'
 
 "Switch between light and dark themes F5
 " call togglebg#map("<F5>")
@@ -187,6 +183,9 @@ imap <right> <nop>
 
 "Toggle line numbering
 set nu
+
+"Highlight 'self' keyword in python
+:syn match pythonBoolean "\(\W\|^\)\@<=self\(\.\)\@="
 
 "Enable vi shorcuts in shell
 "set editing-mode vi
