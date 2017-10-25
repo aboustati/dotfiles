@@ -86,3 +86,11 @@ export LANG=en_GB.UTF-8
 # Anaconda3
 export PATH="/home/aboustati/anaconda3/bin:$PATH"
 
+#Define CUDA_HOME environment variable
+export CUDA_HOME=/opt/cuda 
+#Define LD_LIBRARY_PATH environment variable
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64 
+#Add CUDA_HOME to PATH
+export PATH=${CUDA_HOME}/bin:${PATH}
+
+
